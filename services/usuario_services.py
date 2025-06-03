@@ -12,4 +12,3 @@ def gerar_id_usuario():
 def criar_usuario(dados):
     novo_usuario = Usuario(gerar_id_usuario(), dados['nome'], dados['email'], dados['senha'])
     usuario.append(novo_usuario)
-    return novo_usuario.to_dict()
