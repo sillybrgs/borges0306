@@ -25,3 +25,11 @@ def listar_um_usuario(id_usuario):
         if u.id == id_usuario:
             return u
     return None
+
+def atualizar_usuario(id_usuario, dados):
+    for u in usuario:
+        if u.id == id_usuario:
+            u.nome = dados.get('nome', u.nome)
+            u.email = dados.get('email', u.email)
+            u.senha = dados.get('senha', u.senha)
+            return u
