@@ -19,3 +19,9 @@ def listar_usuarios():
     for u in usuario:
         lista.append(u.to_dict())
     return lista
+
+def listar_um_usuario(id_usuario):
+    for u in usuario:
+        if u.id == id_usuario:
+            return u
+    return None

@@ -8,3 +8,12 @@ def criar():
     novo_usuario = criar_usuario(dados)
     return jsonify(novo_usuario.to_dict()), 201
 
+@usuarios_bp.route('/usuarios', methods=['GET'])
+def listar():
+    lista = listar_usuarios()
+    return jsonify(lista), 200
+
+@usuarios_bp.route('/usuarios/<int:id_usuario>', methods=['GET'])
+def listar_um(id_usuario):
+    usuario = listar_um_usuario(id_usuario)
+    return jsonify(usuario.to_dict()), 200
