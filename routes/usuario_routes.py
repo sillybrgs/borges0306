@@ -17,3 +17,8 @@ def listar():
 def listar_um(id_usuario):
     usuario = listar_um_usuario(id_usuario)
     return jsonify(usuario.to_dict()), 200
+
+usuarios_bp.route('/usuarios/<int:id_usuario>', methods=['PUT'])
+def atualizar(id_usuario):
+    usuario = atualizar_usuario(id_usuario, request.json)
+    return jsonify(usuario.to_dict()), 200
